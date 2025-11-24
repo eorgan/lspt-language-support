@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/Arquivo/Exemplos"
+		},
+		{
+			"path": "../../Downloads/Arquivo/snippets"
+		},
+		{
+			"path": "../../Downloads/Arquivo/syntaxes"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.lspt": "lspt"
+		}
+	}
+}

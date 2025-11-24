@@ -1,0 +1,188 @@
+{
+   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+   "name": "LSPT",
+   "scopeName": "source.lspt",
+   "patterns": [
+      {
+         "include": "#comments"
+      },
+      {
+         "include": "#strings"
+      },
+      {
+         "include": "#keywords"
+      },
+      {
+         "include": "#functions"
+      },
+      {
+         "include": "#variables"
+      },
+      {
+         "include": "#operators"
+      },
+      {
+         "include": "#numbers"
+      },
+      {
+         "include": "#sql"
+      },
+      {
+         "include": "#webservices"
+      }
+   ],
+   "repository": {
+      "comments": {
+         "patterns": [
+            {
+               "name": "comment.block.lspt",
+               "begin": "@--",
+               "end": "--@"
+            },
+            {
+               "name": "comment.block.documentation.lspt",
+               "begin": "/\\*",
+               "end": "\\*/"
+            },
+            {
+               "name": "comment.line.double-slash.lspt",
+               "match": "//.*$"
+            }
+         ]
+      },
+      "strings": {
+         "patterns": [
+            {
+               "name": "string.quoted.double.lspt",
+               "begin": "\"",
+               "end": "\"",
+               "patterns": [
+                  {
+                     "name": "constant.character.escape.lspt",
+                     "match": "\\\\."
+                  }
+               ]
+            },
+            {
+               "name": "string.quoted.single.lspt",
+               "begin": "'",
+               "end": "'",
+               "patterns": [
+                  {
+                     "name": "constant.character.escape.lspt",
+                     "match": "\\\\."
+                  }
+               ]
+            }
+         ]
+      },
+      "keywords": {
+         "patterns": [
+            {
+               "name": "keyword.control.lspt",
+               "match": "\\b(Se|Senao|Enquanto|Para|Inicio|Fim|Retornar|Retorna)\\b"
+            },
+            {
+               "name": "keyword.other.lspt",
+               "match": "\\b(Definir|Funcao|Alfa|Inteiro|Data|Flutuante|Logico)\\b"
+            },
+            {
+               "name": "storage.type.lspt",
+               "match": "\\b(interno|com|senior|g5|co|mcm|ven|pedidos)\\b"
+            },
+            {
+               "name": "keyword.operator.logical.lspt",
+               "match": "\\b(E|OU|NAO|Nao)\\b"
+            }
+         ]
+      },
+      "functions": {
+         "patterns": [
+            {
+               "name": "entity.name.function.lspt",
+               "match": "\\b(SQL_Criar|SQL_UsarSqlSenior2|SQL_UsarAbrangencia|SQL_DefinirComando|SQL_AbrirCursor|SQL_EOF|SQL_RetornarAlfa|SQL_RetornarInteiro|SQL_RetornarData|SQL_RetornarFlutuante|SQL_Proximo|SQL_FecharCursor|SQL_Destruir)\\b"
+            },
+            {
+               "name": "entity.name.function.lspt",
+               "match": "\\b(ExecSQLEx|mensagem|IntParaAlfa|AlfaParaDecimal|ConverteMascara|ConverteDataBanco|SubstAlfa|LimpaEspacos|RetornaAscii|DatSis)\\b"
+            },
+            {
+               "name": "entity.name.function.lspt",
+               "match": "\\b(CriarLinha|Executar|QtdLinhas|LinhaAtual)\\b"
+            },
+            {
+               "name": "entity.name.function.user.lspt",
+               "match": "\\b([A-Z][a-zA-Z0-9_]*)\\s*\\("
+            }
+         ]
+      },
+      "variables": {
+         "patterns": [
+            {
+               "name": "variable.other.alfa.lspt",
+               "match": "\\ba[A-Z][a-zA-Z0-9_]*\\b"
+            },
+            {
+               "name": "variable.other.numeric.lspt",
+               "match": "\\bn[A-Z][a-zA-Z0-9_]*\\b"
+            },
+            {
+               "name": "variable.other.date.lspt",
+               "match": "\\bd[A-Z][a-zA-Z0-9_]*\\b"
+            },
+            {
+               "name": "variable.other.command.lspt",
+               "match": "\\bx[A-Z][a-zA-Z0-9_]*\\b"
+            },
+            {
+               "name": "variable.other.float.lspt",
+               "match": "\\bf[A-Z][a-zA-Z0-9_]*\\b"
+            },
+            {
+               "name": "variable.other.webservice.lspt",
+               "match": "\\bWS[A-Z][a-zA-Z0-9_]*\\b"
+            }
+         ]
+      },
+      "operators": {
+         "patterns": [
+            {
+               "name": "keyword.operator.comparison.lspt",
+               "match": "(=|<>|!=|<=|>=|<|>)"
+            },
+            {
+               "name": "keyword.operator.arithmetic.lspt",
+               "match": "(\\+|-|\\*|/|%)"
+            },
+            {
+               "name": "keyword.operator.assignment.lspt",
+               "match": "="
+            }
+         ]
+      },
+      "numbers": {
+         "patterns": [
+            {
+               "name": "constant.numeric.lspt",
+               "match": "\\b\\d+(\\.\\d+)?\\b"
+            }
+         ]
+      },
+      "sql": {
+         "patterns": [
+            {
+               "name": "keyword.other.sql.lspt",
+               "match": "\\b(SELECT|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|OUTER|ON|AND|OR|ORDER BY|GROUP BY|HAVING|INSERT|INTO|VALUES|UPDATE|SET|DELETE|CREATE|ALTER|DROP|TABLE|INDEX|VIEW|AS|DISTINCT|COUNT|SUM|AVG|MAX|MIN|COALESCE|CONCAT|GETDATE|TRY_CONVERT|DATE|NULL|NOT|IN|LIKE|BETWEEN|EXISTS|CASE|WHEN|THEN|ELSE|END|OVER|PARTITION BY|ROW_NUMBER)\\b"
+            }
+         ]
+      },
+      "webservices": {
+         "patterns": [
+            {
+               "name": "support.class.webservice.lspt",
+               "match": "\\b(sigInt|pedido|opeExe|fecPed|tipPed|prcPed|tnsPro|tnsSer|codEmp|codFil|codRep|datEmi|codCli|codCpg|codFpg|temPar|acePar|obsMot|pedBlo|parcelas|perPar|servico|seqIsp|codSer|cplIsp|qtdPed|uniMed|preUni|codCcu|ModoExecucao|tipoRetorno|mensagemRetorno|respostaPedido|numPed|sitPed|tipRet|retorno|gridPar|gridObs|gridSer|erroExecucao)\\b"
+            }
+         ]
+      }
+   }
+}

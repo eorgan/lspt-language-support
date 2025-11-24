@@ -1,0 +1,56 @@
+@-- Teste de Syntax Highlighting e Snippets --@
+
+/*
+ * Este arquivo testa todos os recursos da extensão LSPT
+ * Author: Eliezer Organ
+ * Date: 2025-11-20
+ */
+
+@-- Declaração de Variáveis --@
+Definir Alfa aTexto;
+Definir Numero nContador;
+Definir Data dDataAtual;
+Definir Flutuante fValor;
+
+@-- Declaração de Web Service --@
+Definir interno.com.senior.g5.co.ven.pedidos WSPedido;
+
+@-- Função de Exemplo --@
+Funcao ProcessarPedido(nNumPed);
+   Inicio
+      // Comentário de linha
+      aSql = "SELECT * FROM TGFPED WHERE NUMPED = " + IntParaAlfa(nNumPed);
+      
+      SQL_Criar(xSql);
+      SQL_UsarSqlSenior2(xSql, 0);
+      SQL_DefinirComando(xSql, aSql);
+      SQL_AbrirCursor(xSql);
+      
+      Enquanto(SQL_EOF(xSql) = 0)
+         Inicio
+            SQL_RetornarAlfa(xSql, "CODPARC", aParceiro);
+            
+            Se(aParceiro <> "") {
+               mensagem(Retorna, "Parceiro: " + aParceiro);
+            } Senao {
+               mensagem(Aviso, "Parceiro não encontrado");
+            }
+            
+            SQL_Proximo(xSql);
+         Fim;
+      
+      SQL_FecharCursor(xSql);
+      SQL_Destruir(xSql);
+   Fim;
+
+@-- Inicio da Execução --@
+   nNumPed = 12345;
+   ProcessarPedido(nNumPed);
+
+
+funcao principal();
+   Inicio
+      mensagem(Retorna, "Hello World!");
+   Fim;
+
+func

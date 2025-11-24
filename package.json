@@ -1,0 +1,66 @@
+{
+  "name": "lspt-language-support",
+  "displayName": "LSPT Language Support",
+  "description": "Language support for LSPT (Linguagem Senior de Programação de Tarefas)",
+  "version": "1.0.0",
+  "publisher": "eliezer-organ",
+  "author": {
+    "name": "Eliezer Organ",
+    "email": "eliezer.organ@consultorseniorsistemas.com.br"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "lspt",
+    "senior",
+    "senior sistemas",
+    "linguagem senior"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliezer-organ/lspt-language-support"
+  },
+  "homepage": "https://github.com/eliezer-organ/lspt-language-support#readme",
+  "bugs": {
+    "url": "https://github.com/eliezer-organ/lspt-language-support/issues"
+  },
+  "activationEvents": [
+    "onLanguage:lspt"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "lspt",
+        "aliases": [
+          "LSPT",
+          "lspt",
+          "Linguagem Senior"
+        ],
+        "extensions": [
+          ".lspt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lspt",
+        "scopeName": "source.lspt",
+        "path": "./syntaxes/lspt.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "lspt",
+        "path": "./snippets/lspt.json"
+      }
+    ]
+  }
+}

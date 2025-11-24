@@ -1,0 +1,12 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+.git/**
+*.vsix
+node_modules/**
+.DS_Store
+Exemplos/**
+*.sh
+lspt-language-support.code-workspace
+INSTALL.md
+CHANGELOG.md
