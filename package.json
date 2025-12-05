@@ -9,7 +9,7 @@
     "email": "eliezer.organ@consultorseniorsistemas.com.br"
   },
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Programming Languages",
@@ -30,9 +30,6 @@
   "bugs": {
     "url": "https://github.com/eliezer-organ/lspt-language-support/issues"
   },
-  "activationEvents": [
-    "onLanguage:lspt"
-  ],
   "main": "./extension.js",
   "contributes": {
     "languages": [
