@@ -30,6 +30,9 @@
   "bugs": {
     "url": "https://github.com/eliezer-organ/lspt-language-support/issues"
   },
+  "activationEvents": [
+    "onLanguage:lspt"
+  ],
   "main": "./extension.js",
   "contributes": {
     "languages": [
